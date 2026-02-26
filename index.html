@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeddingPlanning.es — Find Your Perfect Wedding Planner in Spain</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --champagne: #E8D5B7;
+  --champagne-light: #F5EDE0;
+  --champagne-pale: #FBF7F1;
+  --rose: #C4918A;
+  --rose-deep: #A66E68;
+  --rose-light: #E8C5C0;
+  --sage: #9CAF88;
+  --sage-deep: #7A9166;
+  --olive: #6B705C;
+  --cream: #FEFCF8;
+  --ivory: #FFFFF5;
+  --charcoal: #2D2926;
+  --warm-gray: #6E6862;
+  --light-gray: #E8E4DF;
+  --gold: #C9A96E;
+  --gold-light: #DFC99E;
+  --white: #FFFFFF;
+  --shadow-sm: 0 1px 3px rgba(45,41,38,0.06);
+  --shadow-md: 0 4px 16px rgba(45,41,38,0.08);
+  --shadow-lg: 0 8px 32px rgba(45,41,38,0.12);
+  --shadow-xl: 0 16px 48px rgba(45,41,38,0.16);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Lora', serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--champagne-pale); }
+::-webkit-scrollbar-thumb { background: var(--champagne); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===== UTILITY ===== */
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ===== HEADER / NAV ===== */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(254,252,248,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,213,183,0.4);
+  transition: var(--transition);
+}
+header.scrolled { box-shadow: var(--shadow-md); }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1240px; margin: 0 auto; }
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--rose); }
+.nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-links a:hover { color: var(--rose); }
+.nav-links a.active { color: var(--rose-deep); border-bottom: 2px solid var(--rose); padding-bottom: 2px; }
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary {
+  background: var(--rose);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--rose-deep); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--charcoal);
+}
+.btn-secondary:hover { background: var(--charcoal); color: var(--white); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--charcoal);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-sage { background: var(--sage); color: var(--white); }
+.btn-sage:hover { background: var(--sage-deep); }
+.btn-sm { padding: 8px 20px; font-size: 0.72rem; }
+.btn-icon { width: 40px; height: 40px; padding: 0; display: grid; place-items: center; border-radius: 50%; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--champagne-pale) 0%, var(--cream) 40%, var(--rose-light) 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(196,145,138,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 1240px; margin: 0 auto; padding: 120px 24px 80px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+}
+.hero-text h1 em { font-style: italic; color: var(--rose-deep); }
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--warm-gray);
+  margin-bottom: 40px;
+  max-width: 480px;
+}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.hero-visual {
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+}
+.hero-card {
+  width: 380px; height: 480px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+  transform: rotate(3deg);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+@keyframes cardFloat {
+  0%, 100% { transform: rotate(3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-12px); }
+}
+.hero-card-img {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, var(--rose-light), var(--champagne));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+}
+.hero-card-body { padding: 24px; }
+.hero-card-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+.hero-card-body .location {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.hero-card-body .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 8px; }
+.hero-card-body .price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--sage-deep);
+  font-weight: 600;
+}
+.hero-accent-card {
+  position: absolute;
+  width: 200px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  animation: cardFloat 5s ease-in-out infinite 1s;
+}
+.hero-accent-card.top-left { top: 20px; left: -40px; transform: rotate(-5deg); }
+.hero-accent-card.bottom-right { bottom: 40px; right: -40px; transform: rotate(4deg); }
+.hero-accent-card .stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--rose-deep);
+  font-weight: 700;
+}
+.hero-accent-card .stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  color: var(--warm-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-section {
+  position: relative;
+  margin-top: -40px;
+  z-index: 10;
+  padding: 0 24px;
+}
+.search-bar {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 60px;
+  padding: 8px;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.search-bar input, .search-bar select {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  border: none;
+  background: transparent;
+  padding: 16px 20px;
+  color: var(--charcoal);
+  outline: none;
+  flex: 1;
+  min-width: 0;
+}
+.search-bar select {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  cursor: pointer;
+  appearance: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236E6862'/%3E%3C/svg%3E") no-repeat right 12px center;
+  padding-right: 32px;
+}
+.search-bar .divider { width: 1px; height: 32px; background: var(--light-gray); flex-shrink: 0; }
+.search-bar .btn { flex-shrink: 0; padding: 14px 32px; }
+
+/* ===== SECTIONS ===== */
+section { padding: 100px 0; }
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--warm-gray);
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+
+/* ===== CATEGORY CARDS ===== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.category-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(232,213,183,0.3);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.category-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--rose), var(--gold));
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+.category-card:hover::before { transform: scaleX(1); }
+.category-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.category-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  margin: 0 auto 20px;
+  font-size: 1.8rem;
+}
+.category-card:nth-child(1) .category-icon { background: linear-gradient(135deg, var(--rose-light), var(--champagne-light)); }
+.category-card:nth-child(2) .category-icon { background: linear-gradient(135deg, var(--champagne-light), var(--gold-light)); }
+.category-card:nth-child(3) .category-icon { background: linear-gradient(135deg, rgba(156,175,136,0.2), var(--champagne-light)); }
+.category-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.category-card p {
+  font-size: 0.92rem;
+  color: var(--warm-gray);
+}
+.category-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-top: 16px;
+}
+.badge-live { background: var(--rose-light); color: var(--rose-deep); }
+.badge-soon { background: var(--light-gray); color: var(--warm-gray); }
+
+/* ===== FEATURED PLANNERS ===== */
+.featured-bg { background: var(--champagne-pale); }
+.planners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.planner-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(232,213,183,0.2);
+  transition: var(--transition);
+}
+.planner-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.planner-img {
+  height: 220px;
+  background: linear-gradient(135deg, var(--champagne), var(--rose-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+.planner-verified {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--white);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+  display: flex; align-items: center; gap: 4px;
+}
+.planner-body { padding: 24px; }
+.planner-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.planner-meta {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: var(--warm-gray);
+  margin-bottom: 12px;
+}
+.planner-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.planner-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--champagne-pale);
+  color: var(--olive);
+}
+.planner-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--light-gray);
+}
+.planner-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+}
+.planner-rating {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--gold);
+}
+
+/* ===== HOW IT WORKS ===== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  counter-reset: steps;
+}
+.step-card { text-align: center; counter-increment: steps; }
+.step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+  color: var(--white);
+  display: grid; place-items: center;
+  margin: 0 auto 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.step-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.step-card p {
+  font-size: 0.88rem;
+  color: var(--warm-gray);
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--charcoal) 0%, #3D3833 100%);
+  color: var(--white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(196,145,138,0.15), transparent 60%),
+              radial-gradient(circle at 70% 50%, rgba(201,169,110,0.1), transparent 60%);
+}
+.cta-section .section-label { color: var(--gold-light); }
+.cta-section .section-title { color: var(--white); }
+.cta-section .section-subtitle { color: rgba(255,255,255,0.7); margin: 0 auto 40px; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.6);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand .logo { color: var(--white); font-size: 1.4rem; display: inline-block; margin-bottom: 12px; }
+.footer-brand p { font-size: 0.9rem; line-height: 1.6; max-width: 280px; }
+.footer-col h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+}
+
+/* ===== MODAL / OVERLAYS ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(45,41,38,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-header {
+  padding: 32px 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+}
+.modal-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--champagne-pale);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: grid; place-items: center;
+  transition: var(--transition);
+  color: var(--warm-gray);
+}
+.modal-close:hover { background: var(--light-gray); }
+.modal-body { padding: 24px 32px 32px; }
+
+/* ===== FORMS ===== */
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 8px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  border: 1.5px solid var(--light-gray);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--charcoal);
+  transition: var(--transition);
+  outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(196,145,138,0.15);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-hint {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  color: var(--warm-gray);
+  margin-top: 4px;
+}
+
+.tab-group {
+  display: flex;
+  gap: 0;
+  background: var(--champagne-pale);
+  border-radius: 50px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--warm-gray);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.tab-btn.active {
+  background: var(--white);
+  color: var(--charcoal);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  display: none;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+.dashboard.active { display: block; }
+.dash-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+}
+.dash-sidebar {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(232,213,183,0.3);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.dash-nav { list-style: none; }
+.dash-nav li {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 4px;
+  display: flex; align-items: center; gap: 10px;
+}
+.dash-nav li:hover { background: var(--champagne-pale); color: var(--charcoal); }
+.dash-nav li.active { background: var(--rose-light); color: var(--rose-deep); font-weight: 600; }
+.dash-nav li .badge-count {
+  margin-left: auto;
+  background: var(--rose);
+  color: var(--white);
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.dash-main {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(232,213,183,0.3);
+}
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--light-gray);
+}
+.dash-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+}
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+.status-pending { background: #FFF3CD; color: #856404; }
+.status-approved { background: #D4EDDA; color: #155724; }
+.status-rejected { background: #F8D7DA; color: #721C24; }
+
+.image-upload-area {
+  border: 2px dashed var(--light-gray);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--champagne-pale);
+}
+.image-upload-area:hover { border-color: var(--rose); background: rgba(196,145,138,0.05); }
+.image-upload-area .upload-icon { font-size: 2rem; margin-bottom: 8px; }
+.image-upload-area p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+}
+
+.uploaded-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+.uploaded-img {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--champagne-light), var(--rose-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  position: relative;
+}
+.uploaded-img .remove-btn {
+  position: absolute; top: 4px; right: 4px;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: rgba(45,41,38,0.7);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: grid; place-items: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+.uploaded-img:hover .remove-btn { opacity: 1; }
+
+/* ===== SERVICE ITEM ===== */
+.service-item {
+  background: var(--champagne-pale);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.service-item h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+}
+.service-item .service-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sage-deep);
+}
+.service-item .service-actions { display: flex; gap: 8px; }
+.service-item .service-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  transition: var(--transition);
+}
+.service-item .service-actions button:hover { color: var(--rose); }
+
+/* ===== ADMIN TABLE ===== */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.admin-table th {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  text-align: left;
+  padding: 8px 16px;
+}
+.admin-table td {
+  padding: 16px;
+  background: var(--champagne-pale);
+  font-size: 0.9rem;
+}
+.admin-table td:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.admin-table td:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.admin-table .action-btns { display: flex; gap: 8px; }
+
+/* ===== SEARCH RESULTS ===== */
+.results-section { display: none; }
+.results-section.active { display: block; }
+.results-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 32px;
+}
+.results-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+}
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* ===== PROFILE VIEW ===== */
+.profile-view { display: none; }
+.profile-view.active { display: block; padding-top: 100px; }
+.profile-hero {
+  height: 320px;
+  background: linear-gradient(135deg, var(--champagne), var(--rose-light));
+  border-radius: var(--radius-lg);
+  margin-bottom: -80px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+}
+.profile-content {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 100px 40px 40px;
+  margin-top: 0;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.profile-avatar {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  position: absolute;
+  top: -60px;
+  left: 40px;
+  border: 5px solid var(--white);
+  display: grid; place-items: center;
+  font-size: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+.profile-info h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+.profile-info .tagline {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.profile-meta-row {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: var(--warm-gray);
+  margin-bottom: 24px;
+}
+.profile-meta-row span { display: flex; align-items: center; gap: 6px; }
+.profile-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+.profile-service-card {
+  background: var(--champagne-pale);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.profile-service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.profile-service-card p {
+  font-size: 0.88rem;
+  color: var(--warm-gray);
+  margin-bottom: 12px;
+}
+.profile-service-card .price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sage-deep);
+}
+.profile-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+.profile-gallery-img {
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--champagne-light), var(--rose-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+}
+
+/* ===== TOAST / NOTIFICATION ===== */
+.toast-container {
+  position: fixed;
+  top: 90px; right: 24px;
+  z-index: 3000;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.toast {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px 24px;
+  box-shadow: var(--shadow-lg);
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1), toastOut 0.3s ease-in 3.7s forwards;
+  border-left: 4px solid var(--sage);
+}
+.toast.error { border-left-color: var(--rose-deep); }
+@keyframes toastIn { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toastOut { from { opacity: 1; } to { opacity: 0; transform: translateX(40px); } }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-text p { margin: 0 auto 40px; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { display: none; }
+  .hero-text h1 { font-size: 3rem; }
+  .categories-grid, .planners-grid, .results-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .dash-grid { grid-template-columns: 1fr; }
+  .dash-sidebar { position: static; }
+  .profile-services { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .hero-text h1 { font-size: 2.2rem; }
+  .section-title { font-size: 2rem; }
+  .categories-grid, .planners-grid, .results-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .search-bar { flex-direction: column; border-radius: var(--radius-lg); }
+  .search-bar .divider { width: 100%; height: 1px; }
+  .search-bar .btn { width: 100%; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .uploaded-images { grid-template-columns: repeat(2, 1fr); }
+  .profile-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== PAGE VISIBILITY ===== */
+.page { display: none; }
+.page.active { display: block; }
+</style>
+</head>
+<body>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <nav>
+    <a href="#" class="logo" onclick="showPage('home')">Wedding<span>Planning</span>.es</a>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+      <li><a onclick="showPage('search-results')" id="nav-search">Find Planners</a></li>
+      <li><a onclick="openModal('loginModal')" id="nav-login">Sign In</a></li>
+      <li><a class="btn btn-primary btn-sm" onclick="openModal('registerModal')">List Your Business</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="section-label">Spain's Wedding Directory</p>
+        <h1>Find Your <em>Perfect</em> Wedding Planner</h1>
+        <p>Discover exceptional wedding planners across Spain. Browse verified professionals, compare services and pricing, and bring your dream wedding to life.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="showPage('search-results')">Browse Planners</button>
+          <button class="btn btn-secondary" onclick="openModal('registerModal')">List Your Business</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-img">💐</div>
+          <div class="hero-card-body">
+            <h3>Elena Martínez</h3>
+            <div class="location">📍 Marbella, Málaga</div>
+            <div class="stars">★★★★★</div>
+            <div class="price">From €2,500</div>
+          </div>
+        </div>
+        <div class="hero-accent-card top-left">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Verified Planners</div>
+        </div>
+        <div class="hero-accent-card bottom-right">
+          <div class="stat-num">4.9</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <div class="search-section">
+    <div class="search-bar">
+      <input type="text" placeholder="Search by name or keyword..." id="searchInput">
+      <div class="divider"></div>
+      <select id="searchRegion">
+        <option value="">All Regions</option>
+        <option>Andalucía</option>
+        <option>Cataluña</option>
+        <option>Valencia</option>
+        <option>Madrid</option>
+        <option>Baleares</option>
+        <option>Canarias</option>
+        <option>País Vasco</option>
+        <option>Galicia</option>
+      </select>
+      <div class="divider"></div>
+      <select id="searchBudget">
+        <option value="">Any Budget</option>
+        <option value="low">Under €2,000</option>
+        <option value="mid">€2,000 — €5,000</option>
+        <option value="high">€5,000 — €10,000</option>
+        <option value="luxury">€10,000+</option>
+      </select>
+      <button class="btn btn-primary" onclick="performSearch()">Search</button>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section>
+    <div class="container">
+      <p class="section-label">Browse by Category</p>
+      <h2 class="section-title">Wedding Services Directory</h2>
+      <p class="section-subtitle">From planning to flowers to the perfect venue — find every service you need for your special day.</p>
+      <div class="categories-grid">
+        <div class="category-card" onclick="showPage('search-results')">
+          <div class="category-icon">📋</div>
+          <h3>Wedding Planners</h3>
+          <p>Full-service planners, day-of coordinators, and destination wedding specialists across Spain.</p>
+          <span class="category-badge badge-live">Live Now</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">🏰</div>
+          <h3>Wedding Venues</h3>
+          <p>Castles, vineyards, beachfront estates, boutique hotels and more stunning locations.</p>
+          <span class="category-badge badge-soon">Coming Soon</span>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">📸</div>
+          <h3>Wedding Suppliers</h3>
+          <p>Photographers, florists, caterers, DJs, bridal wear and every supplier you need.</p>
+          <span class="category-badge badge-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PLANNERS -->
+  <section class="featured-bg">
+    <div class="container">
+      <p class="section-label">Featured Professionals</p>
+      <h2 class="section-title">Top Wedding Planners</h2>
+      <p class="section-subtitle">Hand-picked, verified professionals ready to make your dream wedding a reality.</p>
+      <div class="planners-grid" id="featuredPlanners">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div style="text-align:center;">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">Your Journey Starts Here</h2>
+        <p class="section-subtitle" style="margin:0 auto 48px;">Whether you're a bride searching for the perfect planner or a professional looking to grow your business.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Search & Discover</h3>
+          <p>Browse planners by region, budget, style and services offered across Spain.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Compare Profiles</h3>
+          <p>View detailed profiles, portfolios, pricing and verified reviews from real couples.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Connect Directly</h3>
+          <p>Reach out to your favourites and discuss your wedding vision with confidence.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Plan Your Day</h3>
+          <p>Work with your chosen professional to create an unforgettable celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container" style="position:relative; z-index:1;">
+      <p class="section-label">For Wedding Professionals</p>
+      <h2 class="section-title">Grow Your Business With Us</h2>
+      <p class="section-subtitle">Join Spain's fastest-growing wedding directory. Create your profile, showcase your work, and connect with couples planning their perfect day.</p>
+      <div class="cta-actions">
+        <button class="btn btn-gold" onclick="openModal('registerModal')">Create Your Profile</button>
+        <button class="btn btn-secondary" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Learn More</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SEARCH RESULTS PAGE ===== -->
+<div class="page" id="page-search-results">
+  <section style="padding-top: 120px;">
+    <div class="container">
+      <div class="results-header">
+        <div>
+          <h2 class="section-title" style="margin-bottom:4px;">Wedding Planners</h2>
+          <p class="results-count" id="resultsCount">Showing 6 verified planners</p>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <select style="font-family:'Montserrat',sans-serif;font-size:0.82rem;padding:10px 16px;border:1.5px solid var(--light-gray);border-radius:50px;outline:none;cursor:pointer;background:var(--white);">
+            <option>Sort by: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Rating</option>
+            <option>Newest</option>
+          </select>
+        </div>
+      </div>
+      <div class="planners-grid" id="searchResults">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== PROFILE VIEW PAGE ===== -->
+<div class="page" id="page-profile-view">
+  <div class="container" style="padding-top:100px;">
+    <div style="margin-bottom:16px;">
+      <button class="btn btn-secondary btn-sm" onclick="showPage('search-results')">← Back to Results</button>
+    </div>
+    <div class="profile-hero">💒</div>
+    <div class="profile-content">
+      <div class="profile-avatar" id="profileAvatar">👩</div>
+      <div class="profile-info">
+        <h1 id="profileName">Elena Martínez</h1>
+        <p class="tagline" id="profileTagline">Creating unforgettable moments in southern Spain</p>
+        <div class="profile-meta-row">
+          <span id="profileLocation">📍 Marbella, Málaga</span>
+          <span id="profileRating">⭐ 4.9 (127 reviews)</span>
+          <span id="profileExp">🎯 12 years experience</span>
+        </div>
+        <p id="profileBio">Elena is a passionate wedding planner with over a decade of experience crafting bespoke weddings across the Costa del Sol. Specialising in luxury destination weddings, she brings creativity, precision, and warmth to every celebration she touches.</p>
+
+        <h3 style="font-family:'Playfair Display',serif;margin-top:40px;margin-bottom:20px;font-size:1.4rem;">Services & Pricing</h3>
+        <div class="profile-services" id="profileServices">
+          <!-- Populated by JS -->
+        </div>
+
+        <h3 style="font-family:'Playfair Display',serif;margin-top:40px;margin-bottom:20px;font-size:1.4rem;">Portfolio</h3>
+        <div class="profile-gallery" id="profileGallery">
+          <div class="profile-gallery-img">💐</div>
+          <div class="profile-gallery-img">🎂</div>
+          <div class="profile-gallery-img">🥂</div>
+          <div class="profile-gallery-img">💍</div>
+          <div class="profile-gallery-img">🌸</div>
+          <div class="profile-gallery-img">🕊️</div>
+          <div class="profile-gallery-img">🎵</div>
+          <div class="profile-gallery-img">✨</div>
+        </div>
+
+        <div style="margin-top:40px;text-align:center;">
+          <button class="btn btn-primary" onclick="showToast('Message sent! The planner will respond shortly.')">Contact This Planner</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PLANNER DASHBOARD ===== -->
+<div class="page" id="page-dashboard">
+  <div class="container">
+    <div class="dash-grid">
+      <div class="dash-sidebar">
+        <div style="text-align:center;margin-bottom:24px;">
+          <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));margin:0 auto 12px;display:grid;place-items:center;font-size:1.5rem;">👤</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;" id="dashUserName">Your Business</h3>
+          <span class="status-badge status-pending" id="dashStatus">⏳ Pending Review</span>
+        </div>
+        <ul class="dash-nav">
+          <li class="active" onclick="switchDashTab(this, 'dashProfile')">📋 My Profile</li>
+          <li onclick="switchDashTab(this, 'dashServices')">💼 Services & Fees</li>
+          <li onclick="switchDashTab(this, 'dashImages')">📸 Gallery</li>
+          <li onclick="switchDashTab(this, 'dashMessages')">💬 Messages <span class="badge-count">3</span></li>
+          <li onclick="switchDashTab(this, 'dashSettings')">⚙️ Settings</li>
+        </ul>
+      </div>
+      <div class="dash-main">
+        <!-- PROFILE TAB -->
+        <div class="dash-tab active" id="dashProfile">
+          <div class="dash-header">
+            <h2>Business Profile</h2>
+            <span class="status-badge status-pending" id="dashProfileStatus">⏳ Pending Approval</span>
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" id="dashBizName" placeholder="Your business name">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Region</label>
+              <select id="dashRegion">
+                <option>Andalucía</option>
+                <option>Cataluña</option>
+                <option>Valencia</option>
+                <option>Madrid</option>
+                <option>Baleares</option>
+                <option>Canarias</option>
+                <option>País Vasco</option>
+                <option>Galicia</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" id="dashCity" placeholder="e.g. Marbella">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tagline</label>
+            <input type="text" id="dashTagline" placeholder="A short description of your business">
+            <p class="form-hint">This appears below your name in search results</p>
+          </div>
+          <div class="form-group">
+            <label>About Your Business</label>
+            <textarea id="dashBio" placeholder="Tell brides about your experience, style, and what makes you special..." rows="5"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Years of Experience</label>
+              <input type="number" id="dashExperience" placeholder="e.g. 10">
+            </div>
+            <div class="form-group">
+              <label>Languages Spoken</label>
+              <input type="text" id="dashLanguages" placeholder="e.g. English, Spanish, French">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Website</label>
+            <input type="url" id="dashWebsite" placeholder="https://yourwebsite.com">
+          </div>
+          <div style="text-align:right;margin-top:24px;">
+            <button class="btn btn-primary" onclick="saveDashProfile()">Save Profile</button>
+          </div>
+        </div>
+
+        <!-- SERVICES TAB -->
+        <div class="dash-tab" id="dashServices" style="display:none;">
+          <div class="dash-header">
+            <h2>Services & Fees</h2>
+            <button class="btn btn-primary btn-sm" onclick="openModal('addServiceModal')">+ Add Service</button>
+          </div>
+          <div id="servicesList">
+            <div class="service-item">
+              <div>
+                <h4>Full Wedding Planning</h4>
+                <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:4px;">Complete end-to-end wedding coordination</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:20px;">
+                <span class="service-price">From €3,500</span>
+                <div class="service-actions">
+                  <button title="Edit">✏️</button>
+                  <button title="Delete">🗑️</button>
+                </div>
+              </div>
+            </div>
+            <div class="service-item">
+              <div>
+                <h4>Day-of Coordination</h4>
+                <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:4px;">Professional coordination on your wedding day</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:20px;">
+                <span class="service-price">From €1,200</span>
+                <div class="service-actions">
+                  <button title="Edit">✏️</button>
+                  <button title="Delete">🗑️</button>
+                </div>
+              </div>
+            </div>
+            <div class="service-item">
+              <div>
+                <h4>Destination Wedding Package</h4>
+                <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:4px;">Specialised planning for international couples</p>
+              </div>
+              <div style="display:flex;align-items:center;gap:20px;">
+                <span class="service-price">From €5,000</span>
+                <div class="service-actions">
+                  <button title="Edit">✏️</button>
+                  <button title="Delete">🗑️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGES TAB -->
+        <div class="dash-tab" id="dashImages" style="display:none;">
+          <div class="dash-header">
+            <h2>Photo Gallery</h2>
+          </div>
+          <div class="image-upload-area" onclick="showToast('In a live environment, this would open your file browser to select images.')">
+            <div class="upload-icon">📁</div>
+            <p><strong>Click to upload</strong> or drag & drop</p>
+            <p style="font-size:0.72rem;margin-top:4px;">PNG, JPG, WEBP up to 10MB each</p>
+          </div>
+          <div class="uploaded-images">
+            <div class="uploaded-img">💐 <button class="remove-btn">✕</button></div>
+            <div class="uploaded-img">🎂 <button class="remove-btn">✕</button></div>
+            <div class="uploaded-img">🥂 <button class="remove-btn">✕</button></div>
+            <div class="uploaded-img">💍 <button class="remove-btn">✕</button></div>
+            <div class="uploaded-img">🌸 <button class="remove-btn">✕</button></div>
+            <div class="uploaded-img">✨ <button class="remove-btn">✕</button></div>
+          </div>
+        </div>
+
+        <!-- MESSAGES TAB -->
+        <div class="dash-tab" id="dashMessages" style="display:none;">
+          <div class="dash-header">
+            <h2>Messages</h2>
+          </div>
+          <div class="service-item" style="cursor:pointer;">
+            <div>
+              <h4>Sarah & James</h4>
+              <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:2px;">Hi! We're planning a September wedding in Marbella...</p>
+            </div>
+            <span style="font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--warm-gray);">2h ago</span>
+          </div>
+          <div class="service-item" style="cursor:pointer;">
+            <div>
+              <h4>Emily & Tom</h4>
+              <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:2px;">Could you send us your availability for June 2026?</p>
+            </div>
+            <span style="font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--warm-gray);">1d ago</span>
+          </div>
+          <div class="service-item" style="cursor:pointer;">
+            <div>
+              <h4>Anna & Marcos</h4>
+              <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:2px;">Thank you so much for the proposal! We'd love to...</p>
+            </div>
+            <span style="font-family:'Montserrat',sans-serif;font-size:0.72rem;color:var(--warm-gray);">3d ago</span>
+          </div>
+        </div>
+
+        <!-- SETTINGS TAB -->
+        <div class="dash-tab" id="dashSettings" style="display:none;">
+          <div class="dash-header">
+            <h2>Account Settings</h2>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="dashEmail" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="dashPhone" placeholder="+34 600 000 000">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" placeholder="New password">
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Confirm new password">
+            </div>
+          </div>
+          <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--light-gray);">
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:12px;color:var(--rose-deep);">Danger Zone</h3>
+            <button class="btn btn-sm" style="background:#F8D7DA;color:#721C24;">Deactivate Account</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN DASHBOARD ===== -->
+<div class="page" id="page-admin">
+  <section style="padding-top:100px;">
+    <div class="container">
+      <div class="dash-header" style="background:var(--white);padding:24px 32px;border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-bottom:32px;">
+        <div>
+          <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;">Admin Dashboard</h2>
+          <p style="font-family:'Montserrat',sans-serif;font-size:0.82rem;color:var(--warm-gray);">Manage planner profiles and approvals</p>
+        </div>
+        <div style="display:flex;gap:12px;">
+          <div style="text-align:center;background:var(--champagne-pale);padding:12px 24px;border-radius:var(--radius);">
+            <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--rose-deep);" id="adminPendingCount">3</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:0.68rem;color:var(--warm-gray);text-transform:uppercase;letter-spacing:1px;">Pending</div>
+          </div>
+          <div style="text-align:center;background:var(--champagne-pale);padding:12px 24px;border-radius:var(--radius);">
+            <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--sage-deep);" id="adminApprovedCount">12</div>
+            <div style="font-family:'Montserrat',sans-serif;font-size:0.68rem;color:var(--warm-gray);text-transform:uppercase;letter-spacing:1px;">Approved</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:20px;">Pending Approvals</h3>
+        <table class="admin-table" id="adminTable">
+          <thead>
+            <tr>
+              <th>Business</th>
+              <th>Region</th>
+              <th>Submitted</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== MODALS ===== -->
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Welcome Back</h2>
+      <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="tab-group">
+        <button class="tab-btn active" onclick="switchTab(this, 'loginPlanner')">Planner</button>
+        <button class="tab-btn" onclick="switchTab(this, 'loginBride')">Bride</button>
+        <button class="tab-btn" onclick="switchTab(this, 'loginAdmin')">Admin</button>
+      </div>
+      <div id="loginPlanner">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="loginEmail" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" placeholder="Your password">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="handleLogin('planner')">Sign In</button>
+      </div>
+      <div id="loginBride" style="display:none;">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Your password">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="handleLogin('bride')">Sign In</button>
+      </div>
+      <div id="loginAdmin" style="display:none;">
+        <div class="form-group">
+          <label>Admin Email</label>
+          <input type="email" id="adminEmail" placeholder="admin@weddingplanning.es">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="adminPassword" placeholder="Admin password">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="handleLogin('admin')">Sign In as Admin</button>
+      </div>
+      <p style="text-align:center;margin-top:20px;font-size:0.88rem;color:var(--warm-gray);">
+        Don't have an account? <a href="#" style="color:var(--rose);text-decoration:none;font-weight:500;" onclick="closeModal('loginModal');openModal('registerModal')">Register here</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Create Your Account</h2>
+      <button class="modal-close" onclick="closeModal('registerModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="tab-group">
+        <button class="tab-btn active" onclick="switchTab(this, 'regPlanner')">Wedding Planner</button>
+        <button class="tab-btn" onclick="switchTab(this, 'regBride')">Bride / Couple</button>
+      </div>
+      <div id="regPlanner">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="regFirstName" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="regLastName" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" id="regBizName" placeholder="Your business name">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="regEmail" placeholder="your@email.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPassword" placeholder="Create password">
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Region</label>
+          <select id="regRegion">
+            <option>Andalucía</option>
+            <option>Cataluña</option>
+            <option>Valencia</option>
+            <option>Madrid</option>
+            <option>Baleares</option>
+            <option>Canarias</option>
+            <option>País Vasco</option>
+            <option>Galicia</option>
+          </select>
+        </div>
+        <p class="form-hint" style="margin-bottom:16px;">Your profile will be reviewed by our team before going live. This usually takes 1-2 business days.</p>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="handleRegister()">Create Account</button>
+      </div>
+      <div id="regBride" style="display:none;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Create password">
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Wedding Date (approximate)</label>
+          <input type="date">
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="handleRegister()">Create Account</button>
+      </div>
+      <p style="text-align:center;margin-top:20px;font-size:0.88rem;color:var(--warm-gray);">
+        Already registered? <a href="#" style="color:var(--rose);text-decoration:none;font-weight:500;" onclick="closeModal('registerModal');openModal('loginModal')">Sign in</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ADD SERVICE MODAL -->
+<div class="modal-overlay" id="addServiceModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Add a Service</h2>
+      <button class="modal-close" onclick="closeModal('addServiceModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Service Name</label>
+        <input type="text" id="newServiceName" placeholder="e.g. Full Wedding Planning">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea id="newServiceDesc" placeholder="Describe what's included in this service..."></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Price (€)</label>
+          <input type="number" id="newServicePrice" placeholder="e.g. 3500">
+        </div>
+        <div class="form-group">
+          <label>Price Type</label>
+          <select id="newServicePriceType">
+            <option>Starting from</option>
+            <option>Fixed price</option>
+            <option>Per hour</option>
+            <option>Custom quote</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;" onclick="addService()">Add Service</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Wedding<span>Planning</span>.es</a>
+        <p>Spain's premier wedding planning directory. Connecting couples with the finest wedding professionals since 2024.</p>
+      </div>
+      <div class="footer-col">
+        <h4>For Couples</h4>
+        <a href="#">Find Planners</a>
+        <a href="#">Venues (Coming Soon)</a>
+        <a href="#">Suppliers (Coming Soon)</a>
+        <a href="#">Wedding Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>For Professionals</h4>
+        <a href="#">List Your Business</a>
+        <a href="#">Pricing</a>
+        <a href="#">Success Stories</a>
+        <a href="#">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 WeddingPlanning.es — All rights reserved</span>
+      <span>Made with ❤️ in Spain</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== DATA STORE =====
+const samplePlanners = [
+  {
+    id: 1, name: 'Elena Martínez', business: 'Elena Martínez Weddings',
+    region: 'Andalucía', city: 'Marbella, Málaga', rating: 4.9, reviews: 127,
+    experience: 12, tagline: 'Creating unforgettable moments in southern Spain',
+    bio: 'Elena is a passionate wedding planner with over a decade of experience crafting bespoke weddings across the Costa del Sol. Specialising in luxury destination weddings, she brings creativity, precision, and warmth to every celebration.',
+    emoji: '👩', priceFrom: 2500, verified: true, status: 'approved',
+    tags: ['Luxury', 'Destination', 'Bilingual'],
+    services: [
+      { name: 'Full Wedding Planning', desc: 'Complete end-to-end wedding coordination', price: '€3,500' },
+      { name: 'Day-of Coordination', desc: 'Professional coordination on your wedding day', price: '€1,200' },
+      { name: 'Destination Package', desc: 'Specialised planning for international couples', price: '€5,000' }
+    ]
+  },
+  {
+    id: 2, name: 'Sofia García', business: 'Bodas con Alma',
+    region: 'Cataluña', city: 'Barcelona', rating: 4.8, reviews: 89,
+    experience: 8, tagline: 'Stylish, modern weddings with soul',
+    bio: 'Sofia brings a fresh, contemporary approach to wedding planning in Barcelona and the surrounding region. Known for her impeccable style and attention to detail.',
+    emoji: '👩‍🦰', priceFrom: 3000, verified: true, status: 'approved',
+    tags: ['Modern', 'Stylish', 'Eco-Friendly'],
+    services: [
+      { name: 'Complete Planning', desc: 'From concept to celebration', price: '€3,000' },
+      { name: 'Partial Planning', desc: 'Guidance on key decisions', price: '€1,800' }
+    ]
+  },
+  {
+    id: 3, name: 'Isabella Ruiz', business: 'Isla Weddings',
+    region: 'Baleares', city: 'Palma, Mallorca', rating: 4.9, reviews: 156,
+    experience: 15, tagline: 'Island weddings of extraordinary beauty',
+    bio: 'Isabella has been creating magical island weddings in Mallorca, Ibiza, and Menorca for 15 years. She specialises in outdoor celebrations that embrace the natural beauty of the Balearic Islands.',
+    emoji: '👱‍♀️', priceFrom: 4000, verified: true, status: 'approved',
+    tags: ['Island', 'Outdoor', 'Luxury'],
+    services: [
+      { name: 'Full Island Wedding', desc: 'Everything from flights to flowers', price: '€4,000' },
+      { name: 'Elopement Package', desc: 'Intimate celebrations for two', price: '€1,500' },
+      { name: 'Multi-Day Event', desc: 'Welcome party through farewell brunch', price: '€7,000' }
+    ]
+  },
+  {
+    id: 4, name: 'Carmen López', business: 'Carmen López Events',
+    region: 'Madrid', city: 'Madrid', rating: 4.7, reviews: 64,
+    experience: 6, tagline: 'Elegant city weddings with a personal touch',
+    bio: 'Carmen creates sophisticated wedding celebrations in Madrid and central Spain. Her background in hospitality management gives her a unique edge in vendor coordination.',
+    emoji: '👩‍🦱', priceFrom: 2000, verified: true, status: 'approved',
+    tags: ['Elegant', 'City', 'Affordable'],
+    services: [
+      { name: 'Full Planning', desc: 'Comprehensive wedding management', price: '€2,000' },
+      { name: 'Month-of Coordination', desc: 'Final month logistics & day-of management', price: '€900' }
+    ]
+  },
+  {
+    id: 5, name: 'Lucía Fernández', business: 'Momentos by Lucía',
+    region: 'Valencia', city: 'Valencia', rating: 4.8, reviews: 93,
+    experience: 10, tagline: 'Mediterranean weddings full of colour and joy',
+    bio: 'Lucía is known for her vibrant, joyful approach to wedding planning. Based in Valencia, she creates celebrations that embrace Mediterranean culture, cuisine, and warmth.',
+    emoji: '👩‍🦳', priceFrom: 2200, verified: true, status: 'approved',
+    tags: ['Mediterranean', 'Colourful', 'Cultural'],
+    services: [
+      { name: 'Mediterranean Wedding', desc: 'Full planning with local flair', price: '€2,200' },
+      { name: 'Beach Wedding', desc: 'Coastal celebrations done right', price: '€3,000' }
+    ]
+  },
+  {
+    id: 6, name: 'Ana Torres', business: 'Torres Wedding Co.',
+    region: 'Andalucía', city: 'Seville', rating: 4.6, reviews: 41,
+    experience: 4, tagline: 'Romantic Andalusian celebrations',
+    bio: 'Ana specialises in intimate, romantic weddings in Seville and surrounding areas. She brings warmth and passion to every event.',
+    emoji: '👧', priceFrom: 1800, verified: true, status: 'approved',
+    tags: ['Romantic', 'Intimate', 'Budget-Friendly'],
+    services: [
+      { name: 'Intimate Wedding', desc: 'For celebrations under 50 guests', price: '€1,800' },
+      { name: 'Day-of Service', desc: 'Seamless day-of coordination', price: '€800' }
+    ]
+  }
+];
+
+const pendingPlanners = [
+  { id: 101, business: 'Marta Blanco Events', region: 'Galicia', submitted: '2024-12-18', status: 'pending' },
+  { id: 102, business: 'Costa Brava Weddings', region: 'Cataluña', submitted: '2024-12-17', status: 'pending' },
+  { id: 103, business: 'Sol y Luna Bodas', region: 'Canarias', submitted: '2024-12-15', status: 'pending' }
+];
+
+let currentUser = null; // { type: 'planner'|'bride'|'admin', name: '...' }
+
+// ===== PAGE NAVIGATION =====
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  if (page) page.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navLink = document.getElementById('nav-' + pageId.split('-')[0]);
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== MODALS =====
+function openModal(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// ===== TABS =====
+function switchTab(btn, tabId) {
+  const parent = btn.closest('.modal-body') || btn.closest('.dash-main');
+  parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const tabs = ['loginPlanner', 'loginBride', 'loginAdmin', 'regPlanner', 'regBride'];
+  tabs.forEach(t => {
+    const el = document.getElementById(t);
+    if (el) el.style.display = 'none';
+  });
+  document.getElementById(tabId).style.display = 'block';
+}
+
+function switchDashTab(li, tabId) {
+  li.closest('.dash-nav').querySelectorAll('li').forEach(l => l.classList.remove('active'));
+  li.classList.add('active');
+  document.querySelectorAll('.dash-tab').forEach(t => t.style.display = 'none');
+  document.getElementById(tabId).style.display = 'block';
+}
+
+// ===== AUTH =====
+function handleLogin(type) {
+  if (type === 'admin') {
+    currentUser = { type: 'admin', name: 'Admin' };
+    closeModal('loginModal');
+    updateNav();
+    showPage('admin');
+    showToast('Welcome back, Admin!');
+  } else if (type === 'planner') {
+    currentUser = { type: 'planner', name: 'My Business' };
+    closeModal('loginModal');
+    updateNav();
+    showPage('dashboard');
+    showToast('Welcome to your dashboard!');
+  } else {
+    currentUser = { type: 'bride', name: 'Bride' };
+    closeModal('loginModal');
+    updateNav();
+    showPage('search-results');
+    showToast('Welcome! Start browsing planners.');
+  }
+}
+
+function handleRegister() {
+  const name = document.getElementById('regBizName')?.value || 'New Business';
+  currentUser = { type: 'planner', name: name || 'My Business' };
+  closeModal('registerModal');
+  updateNav();
+  showPage('dashboard');
+  document.getElementById('dashBizName').value = name;
+  showToast('Account created! Complete your profile to get started.');
+}
+
+function handleLogout() {
+  currentUser = null;
+  updateNav();
+  showPage('home');
+  showToast('You have been signed out.');
+}
+
+function updateNav() {
+  const navLinks = document.querySelector('.nav-links');
+  if (currentUser) {
+    let dashLink = currentUser.type === 'admin' ? 'admin' : 'dashboard';
+    let dashLabel = currentUser.type === 'admin' ? 'Admin Panel' : 'Dashboard';
+    navLinks.innerHTML = `
+      <li><a onclick="showPage('home')" id="nav-home">Home</a></li>
+      <li><a onclick="showPage('search-results')" id="nav-search">Find Planners</a></li>
+      <li><a onclick="showPage('${dashLink}')" id="nav-dash">${dashLabel}</a></li>
+      <li><a class="btn btn-secondary btn-sm" onclick="handleLogout()">Sign Out</a></li>
+    `;
+  } else {
+    navLinks.innerHTML = `
+      <li><a onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+      <li><a onclick="showPage('search-results')" id="nav-search">Find Planners</a></li>
+      <li><a onclick="openModal('loginModal')" id="nav-login">Sign In</a></li>
+      <li><a class="btn btn-primary btn-sm" onclick="openModal('registerModal')">List Your Business</a></li>
+    `;
+  }
+}
+
+// ===== PLANNER CARDS =====
+function createPlannerCard(planner) {
+  return `
+    <div class="planner-card" onclick="viewProfile(${planner.id})">
+      <div class="planner-img" style="background:linear-gradient(135deg, var(--champagne), var(--rose-light));">
+        ${planner.emoji}
+        ${planner.verified ? '<div class="planner-verified">✓ Verified</div>' : ''}
+      </div>
+      <div class="planner-body">
+        <h3>${planner.name}</h3>
+        <div class="planner-meta">
+          <span>📍 ${planner.city}</span>
+          <span>🎯 ${planner.experience}yr exp</span>
+        </div>
+        <div class="planner-tags">
+          ${planner.tags.map(t => `<span class="planner-tag">${t}</span>`).join('')}
+        </div>
+        <div class="planner-footer">
+          <span class="planner-price">From €${planner.priceFrom.toLocaleString()}</span>
+          <span class="planner-rating">⭐ ${planner.rating} (${planner.reviews})</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPlanners(container, planners) {
+  document.getElementById(container).innerHTML = planners.map(createPlannerCard).join('');
+}
+
+// ===== PROFILE VIEW =====
+function viewProfile(id) {
+  const planner = samplePlanners.find(p => p.id === id);
+  if (!planner) return;
+  document.getElementById('profileAvatar').textContent = planner.emoji;
+  document.getElementById('profileName').textContent = planner.name;
+  document.getElementById('profileTagline').textContent = planner.tagline;
+  document.getElementById('profileLocation').textContent = '📍 ' + planner.city;
+  document.getElementById('profileRating').textContent = `⭐ ${planner.rating} (${planner.reviews} reviews)`;
+  document.getElementById('profileExp').textContent = `🎯 ${planner.experience} years experience`;
+  document.getElementById('profileBio').textContent = planner.bio;
+  document.getElementById('profileServices').innerHTML = planner.services.map(s => `
+    <div class="profile-service-card">
+      <h3>${s.name}</h3>
+      <p>${s.desc}</p>
+      <div class="price">${s.price}</div>
+    </div>
+  `).join('');
+  showPage('profile-view');
+}
+
+// ===== SEARCH =====
+function performSearch() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const region = document.getElementById('searchRegion').value;
+  const budget = document.getElementById('searchBudget').value;
+
+  let results = samplePlanners.filter(p => p.status === 'approved');
+
+  if (query) {
+    results = results.filter(p =>
+      p.name.toLowerCase().includes(query) ||
+      p.business.toLowerCase().includes(query) ||
+      p.tags.some(t => t.toLowerCase().includes(query)) ||
+      p.city.toLowerCase().includes(query)
+    );
+  }
+  if (region) {
+    results = results.filter(p => p.region === region);
+  }
+  if (budget) {
+    const budgetRanges = { low: [0, 2000], mid: [2000, 5000], high: [5000, 10000], luxury: [10000, Infinity] };
+    const [min, max] = budgetRanges[budget];
+    results = results.filter(p => p.priceFrom >= min && p.priceFrom <= max);
+  }
+
+  renderPlanners('searchResults', results);
+  document.getElementById('resultsCount').textContent = `Showing ${results.length} verified planner${results.length !== 1 ? 's' : ''}`;
+  showPage('search-results');
+}
+
+// ===== DASHBOARD =====
+function saveDashProfile() {
+  showToast('Profile saved! It will be reviewed by our team shortly.');
+}
+
+function addService() {
+  const name = document.getElementById('newServiceName').value;
+  const desc = document.getElementById('newServiceDesc').value;
+  const price = document.getElementById('newServicePrice').value;
+  const type = document.getElementById('newServicePriceType').value;
+
+  if (!name || !price) {
+    showToast('Please fill in the service name and price.', true);
+    return;
+  }
+
+  const priceLabel = type === 'Custom quote' ? 'Custom Quote' : `${type === 'Starting from' ? 'From ' : ''}€${Number(price).toLocaleString()}${type === 'Per hour' ? '/hr' : ''}`;
+
+  const html = `
+    <div class="service-item">
+      <div>
+        <h4>${name}</h4>
+        <p style="font-size:0.85rem;color:var(--warm-gray);margin-top:4px;">${desc}</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;">
+        <span class="service-price">${priceLabel}</span>
+        <div class="service-actions">
+          <button title="Edit">✏️</button>
+          <button title="Delete" onclick="this.closest('.service-item').remove()">🗑️</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('servicesList').insertAdjacentHTML('beforeend', html);
+  closeModal('addServiceModal');
+  document.getElementById('newServiceName').value = '';
+  document.getElementById('newServiceDesc').value = '';
+  document.getElementById('newServicePrice').value = '';
+  showToast('Service added successfully!');
+}
+
+// ===== ADMIN =====
+function renderAdminTable() {
+  document.getElementById('adminTableBody').innerHTML = pendingPlanners.map(p => `
+    <tr id="admin-row-${p.id}">
+      <td><strong>${p.business}</strong></td>
+      <td>${p.region}</td>
+      <td>${p.submitted}</td>
+      <td><span class="status-badge status-${p.status}">${p.status === 'pending' ? '⏳ Pending' : p.status === 'approved' ? '✓ Approved' : '✕ Rejected'}</span></td>
+      <td>
+        <div class="action-btns">
+          <button class="btn btn-sage btn-sm" onclick="adminAction(${p.id}, 'approved')">Approve</button>
+          <button class="btn btn-sm" style="background:#F8D7DA;color:#721C24;" onclick="adminAction(${p.id}, 'rejected')">Reject</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function adminAction(id, action) {
+  const planner = pendingPlanners.find(p => p.id === id);
+  if (planner) {
+    planner.status = action;
+    renderAdminTable();
+    const pending = pendingPlanners.filter(p => p.status === 'pending').length;
+    const approved = pendingPlanners.filter(p => p.status === 'approved').length + 12;
+    document.getElementById('adminPendingCount').textContent = pending;
+    document.getElementById('adminApprovedCount').textContent = approved;
+    showToast(`${planner.business} has been ${action}.`);
+  }
+}
+
+// ===== TOAST =====
+function showToast(message, isError = false) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast' + (isError ? ' error' : '');
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), 4200);
+}
+
+// ===== HEADER SCROLL =====
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  renderPlanners('featuredPlanners', samplePlanners.slice(0, 3));
+  renderPlanners('searchResults', samplePlanners);
+  renderAdminTable();
+});
+</script>
+</body>
+</html>
