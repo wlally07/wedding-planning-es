@@ -3,7 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WeddingPlanning.es — Find Your Perfect Wedding Planner in Spain</title>
+<title>Wedding Planners Spain — Find Verified Professionals Across Spain | WeddingPlanning.es</title>
+<meta name="description" content="Discover Spain's top wedding planners, venues and vendors. Browse verified professionals across Marbella, Barcelona, Ibiza, Madrid and beyond. Compare services, pricing and reviews. Free to use.">
+<link rel="canonical" href="https://www.weddingplanning.es/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="WeddingPlanning.es">
+<meta name="geo.region" content="ES">
+<meta name="geo.placename" content="Spain">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.weddingplanning.es/">
+<meta property="og:title" content="Wedding Planners Spain — Find Verified Professionals | WeddingPlanning.es">
+<meta property="og:description" content="Discover Spain's top wedding planners, venues and vendors. Browse verified professionals across Marbella, Barcelona, Ibiza, Madrid and beyond. Free to use.">
+<meta property="og:site_name" content="WeddingPlanning.es">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wedding Planners Spain — Find Verified Professionals | WeddingPlanning.es">
+<meta name="twitter:description" content="Discover Spain's top wedding planners, venues and vendors. Browse verified professionals across Marbella, Barcelona, Ibiza, Madrid and beyond.">
+
+<!-- Schema.org JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "WeddingPlanning.es",
+  "url": "https://www.weddingplanning.es",
+  "description": "Spain's premier wedding planning directory connecting couples with verified wedding planners, venues and vendors across Spain.",
+  "logo": "https://www.weddingplanning.es/logo.png",
+  "foundingDate": "2024",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Spain"
+  },
+  "sameAs": []
+}
+</script>
+
+<!-- Schema.org JSON-LD: WebSite with SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "WeddingPlanning.es",
+  "url": "https://www.weddingplanning.es",
+  "description": "Spain's premier wedding planning directory. Find verified wedding planners, venues and vendors across Marbella, Barcelona, Ibiza, Madrid and all of Spain.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.weddingplanning.es/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Schema.org JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where can I find wedding planners in Spain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WeddingPlanning.es lists verified wedding planners across Spain including Marbella, Barcelona, Madrid, Valencia, Ibiza, Mallorca, Seville, Málaga, Tenerife, Cádiz, Girona and Benidorm. Browse professionals by location, budget and style to find your perfect match."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do wedding planners in Spain offer on-the-day coordination?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many wedding planners in Spain offer on-the-day coordination as a standalone service. This includes full timeline management, supplier liaison, set-up oversight, and discreet problem-solving throughout your wedding day so you and your family can enjoy the celebration without distraction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can wedding planners help with sourcing venues in Spain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Wedding planners in Spain can provide curated venue recommendations based on your style, guest numbers and budget. They arrange and attend venue tours, offer guidance on contracts and capacity, and use their local knowledge to find settings that work both aesthetically and logistically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a wedding planner cost in Spain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wedding planner pricing in Spain is typically bespoke and varies based on the size, complexity and specific requirements of your event. Following an initial consultation, most planners provide a tailored proposal outlining scope and costs. Prices can range from around €800 for day-of coordination to €5,000 or more for full destination wedding planning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a wedding planner for a destination wedding in Spain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While not essential, a wedding planner is highly recommended for destination weddings in Spain. Professional guidance significantly reduces stress and prevents costly mistakes, especially when managing supplier contracts, timelines and logistics from abroad. Local knowledge of venues, regulations and suppliers is invaluable for overseas couples."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can wedding planners help source suppliers in Spain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, established wedding planners in Spain work with trusted networks of experienced suppliers including photographers, florists, caterers, stylists, entertainers and more. They provide personalised recommendations that suit your budget and style, assist with reviewing proposals and contracts, and coordinate all suppliers to ensure seamless delivery on your wedding day."
+      }
+    }
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -700,6 +812,91 @@ footer {
   .profile-gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ===== TYPES OF PLANNING SECTION ===== */
+.planning-types-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.planning-type-card {
+  background: var(--white); border-radius: var(--radius-lg); padding: 44px 36px;
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(232,213,183,0.3);
+  position: relative; overflow: hidden;
+}
+.planning-type-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+}
+.planning-type-card.professional::before { background: linear-gradient(90deg, var(--rose), var(--rose-deep)); }
+.planning-type-card.diy::before { background: linear-gradient(90deg, var(--sage), var(--sage-deep)); }
+.planning-type-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 20px;
+}
+.professional .planning-type-icon { background: linear-gradient(135deg, var(--rose-light), var(--champagne-light)); }
+.diy .planning-type-icon { background: linear-gradient(135deg, rgba(156,175,136,0.25), var(--champagne-light)); }
+.planning-type-card h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 16px; color: var(--charcoal);
+}
+.planning-type-card .type-body {
+  font-size: 0.95rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 28px;
+}
+.planning-benefits { display: flex; flex-direction: column; gap: 14px; }
+.planning-benefit {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-family: 'Montserrat', sans-serif; font-size: 0.85rem;
+  color: var(--charcoal); line-height: 1.6;
+}
+.benefit-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .planning-types-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section { background: var(--white); }
+.faq-grid { display: flex; flex-direction: column; gap: 0; max-width: 860px; }
+.faq-item {
+  border-bottom: 1px solid var(--light-gray);
+  overflow: hidden;
+}
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 28px 0; cursor: pointer; width: 100%;
+  background: none; border: none; text-align: left;
+  font-family: 'Playfair Display', serif; font-size: 1.15rem;
+  color: var(--charcoal); font-weight: 500; transition: var(--transition);
+}
+.faq-question:hover { color: var(--rose-deep); }
+.faq-toggle {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--champagne-pale); display: grid; place-items: center;
+  font-size: 1.2rem; flex-shrink: 0; transition: var(--transition);
+  color: var(--rose-deep);
+}
+.faq-item.open .faq-toggle { background: var(--rose); color: var(--white); transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq-item.open .faq-answer { max-height: 600px; }
+.faq-answer-inner { padding: 0 0 28px; }
+.faq-answer-inner p {
+  font-size: 0.95rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 20px;
+}
+.faq-bullets { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.faq-bullet {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-family: 'Montserrat', sans-serif; font-size: 0.85rem;
+  color: var(--charcoal); line-height: 1.6;
+}
+.faq-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+}
+.faq-dot-rose { background: var(--rose); }
+.faq-dot-sage { background: var(--sage); }
+.faq-dot-gold { background: var(--gold); }
+.faq-dot-champagne { background: var(--champagne); }
+.faq-dot-olive { background: var(--olive); }
+.faq-dot-deep { background: var(--rose-deep); }
+
 .page { display: none; }
 .page.active { display: block; }
 </style>
@@ -830,7 +1027,7 @@ footer {
   <section class="hero" id="heroSection">
     <div class="hero-content">
       <div class="hero-text">
-        <p class="section-label">Spain's Wedding Directory</p>
+        <p class="section-label">Wedding Planning Services</p>
         <h1>Find Your <em>Perfect</em> Wedding Planner</h1>
         <p>Discover exceptional wedding planners across Spain. Browse verified professionals, compare services and pricing, and bring your dream wedding to life.</p>
 
@@ -937,6 +1134,172 @@ footer {
         <div class="step-card"><div class="step-num">2</div><h3>Compare Profiles</h3><p>View detailed profiles, portfolios, pricing and verified reviews from real couples.</p></div>
         <div class="step-card"><div class="step-num">3</div><h3>Connect Directly</h3><p>Reach out to your favourites and discuss your wedding vision with confidence.</p></div>
         <div class="step-card"><div class="step-num">4</div><h3>Plan Your Day</h3><p>Work with your chosen professional to create an unforgettable celebration.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES OF WEDDING PLANNING -->
+  <section class="featured-bg">
+    <div class="container">
+      <div style="text-align:center;">
+        <p class="section-label">Types of Wedding Planning</p>
+        <h2 class="section-title">Professional Planner or DIY?</h2>
+        <p class="section-subtitle" style="margin:0 auto 48px;">Every couple is different. Whether you choose to work with a professional wedding planner or take a hands-on approach, understanding the benefits of each helps you make the right decision for your celebration.</p>
+      </div>
+      <div class="planning-types-grid">
+
+        <!-- PROFESSIONAL WEDDING PLANNER -->
+        <div class="planning-type-card professional">
+          <div class="planning-type-icon">👩‍💼</div>
+          <h3>Professional Wedding Planning</h3>
+          <div class="type-body">
+            <p>A professional wedding planner brings experience, industry connections and structured project management to your wedding day. For couples planning a destination wedding in Spain, a local planner offers invaluable knowledge of venues, suppliers, regulations and cultural expectations that would otherwise take months to research independently.</p>
+            <p>Professional planners manage every detail from initial concept through to the final farewell — handling supplier negotiations, contract reviews, budget tracking, timeline creation and on-the-day coordination. They anticipate problems before they arise, manage logistics across multiple vendors simultaneously, and ensure your vision is delivered exactly as planned. For international couples unfamiliar with Spanish wedding customs, supplier expectations and local regulations, this expertise removes significant risk and allows you to enjoy the planning process rather than feeling overwhelmed by it.</p>
+          </div>
+          <div class="planning-benefits">
+            <div class="planning-benefit"><img src="/images/professional-wedding-planner-spain.svg" width="10" height="10" alt="Professional Wedding Planner Spain" class="benefit-dot"> Access to established networks of trusted, vetted wedding suppliers across Spain</div>
+            <div class="planning-benefit"><img src="/images/wedding-planner-benefits.svg" width="10" height="10" alt="Wedding Planner Benefits" class="benefit-dot"> Expert budget management that often saves more than the planner's fee through supplier negotiations</div>
+            <div class="planning-benefit"><img src="/images/destination-wedding-planning-spain.svg" width="10" height="10" alt="Destination Wedding Planning Spain" class="benefit-dot"> Local knowledge of Spanish venues, regulations, marriage paperwork and cultural traditions</div>
+            <div class="planning-benefit"><img src="/images/full-service-wedding-planner.svg" width="10" height="10" alt="Full Service Wedding Planner" class="benefit-dot"> Complete day-of coordination ensuring every element runs to schedule without stress</div>
+            <div class="planning-benefit"><img src="/images/stress-free-wedding-planning.svg" width="10" height="10" alt="Stress Free Wedding Planning" class="benefit-dot"> Significant reduction in planning stress, allowing you to enjoy the engagement and the day itself</div>
+          </div>
+          <div style="margin-top:32px;text-align:center;"><button class="btn btn-primary" onclick="showPage('search-results')">Find a Wedding Planner</button></div>
+        </div>
+
+        <!-- DIY WEDDING PLANNING -->
+        <div class="planning-type-card diy">
+          <div class="planning-type-icon">📋</div>
+          <h3>DIY Wedding Planning</h3>
+          <div class="type-body">
+            <p>DIY wedding planning gives you complete creative control over every aspect of your celebration. For couples who enjoy project management, have strong organisational skills and want a deeply personal touch throughout the planning process, managing your own wedding can be an incredibly rewarding experience that brings you closer together as a couple.</p>
+            <p>Planning your own wedding in Spain requires dedicated research into local venues, supplier availability, legal requirements for marriage, and logistical considerations such as guest transport and accommodation. Many couples combine a DIY approach with selective professional support — perhaps handling the creative vision themselves while hiring a day-of coordinator to manage the logistics. With the right planning tools, checklists and timelines, a self-planned wedding can be just as polished and memorable as one managed by a professional, while reflecting your personality in every detail from start to finish.</p>
+          </div>
+          <div class="planning-benefits">
+            <div class="planning-benefit"><img src="/images/diy-wedding-planning-spain.svg" width="10" height="10" alt="DIY Wedding Planning Spain" class="benefit-dot"> Full creative control over every decision, detail and design element of your wedding</div>
+            <div class="planning-benefit"><img src="/images/wedding-planning-budget.svg" width="10" height="10" alt="Wedding Planning Budget" class="benefit-dot"> Potential cost savings by managing vendor relationships and negotiations directly</div>
+            <div class="planning-benefit"><img src="/images/plan-your-own-wedding.svg" width="10" height="10" alt="Plan Your Own Wedding" class="benefit-dot"> A deeply personal planning journey that many couples find strengthens their partnership</div>
+            <div class="planning-benefit"><img src="/images/wedding-planning-tools.svg" width="10" height="10" alt="Wedding Planning Tools" class="benefit-dot"> Flexibility to mix professional support with self-managed elements to suit your style</div>
+            <div class="planning-benefit"><img src="/images/wedding-planning-checklist.svg" width="10" height="10" alt="Wedding Planning Checklist" class="benefit-dot"> Complete transparency and direct communication with every supplier and venue</div>
+          </div>
+          <div style="margin-top:32px;text-align:center;"><button class="btn btn-sage" onclick="showToast('Planning Tools coming soon!')">Do It Myself</button></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMONLY ASKED QUESTIONS -->
+  <section class="faq-section" id="faqSection">
+    <div class="container">
+      <div style="text-align:center;">
+        <p class="section-label">Commonly Asked Questions</p>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <p class="section-subtitle" style="margin:0 auto 48px;">Planning a wedding in Spain? Here are the answers to the questions couples ask most when searching for wedding planners, venues and vendors.</p>
+      </div>
+      <div class="faq-grid">
+
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Where can I find wedding planners in Spain?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>WeddingPlanning.es lists verified wedding planners across Spain, working with both local and international couples. From the Costa del Sol to the Balearic Islands, we connect you with professionals who understand your vision and your destination.</p>
+            <p>Our directory covers planners across all of Spain's most popular wedding locations. Whether you are planning an intimate gathering or a large-scale celebration, you can search by location, budget and style to find your perfect match.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/wedding-planning-spain.svg" width="10" height="10" alt="Wedding Planning Spain" class="faq-dot"> Planners across Marbella, Barcelona, Madrid, Valencia, Ibiza and beyond</div>
+              <div class="faq-bullet"><img src="/images/wedding-planners-spain.svg" width="10" height="10" alt="Wedding Planners Spain" class="faq-dot"> Strong relationships with leading venues and suppliers</div>
+              <div class="faq-bullet"><img src="/images/spanish-wedding-planners.svg" width="10" height="10" alt="Spanish Wedding Planners" class="faq-dot"> Experience planning destination weddings for overseas couples</div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do wedding planners in Spain offer on-the-day coordination?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Yes. Many couples plan much of their wedding themselves but want professional oversight to ensure everything runs smoothly on the day. On-the-day coordination ensures your plans are executed exactly as intended.</p>
+            <p>In the weeks leading up to your wedding, your coordinator liaises with suppliers, confirms final details and builds a structured timeline. On the day itself, they manage set-up, oversee suppliers, coordinate the schedule and discreetly resolve any issues — allowing you and your family to fully enjoy the celebration.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/spanish-wedding-planning.svg" width="10" height="10" alt="Spanish Wedding Planning" class="faq-dot"> Full timeline management and supplier coordination</div>
+              <div class="faq-bullet"><img src="/images/wedding-day-coordination-spain.svg" width="10" height="10" alt="Wedding Day Coordination Spain" class="faq-dot"> Oversight of set-up, ceremony and reception flow</div>
+              <div class="faq-bullet"><img src="/images/on-the-day-wedding-coordinator.svg" width="10" height="10" alt="On the Day Wedding Coordinator" class="faq-dot"> Calm, discreet problem-solving throughout the day</div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can wedding planners help with sourcing venues in Spain?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Absolutely. Choosing the right venue is one of the most important decisions you will make, and experienced planners guide you through the process from start to finish.</p>
+            <p>They take time to understand your style, guest numbers and priorities before recommending carefully selected venues that align with your vision. Many planners arrange and attend venue tours, and provide practical advice on layout, logistics and suitability.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/wedding-venues-spain.svg" width="10" height="10" alt="Wedding Venues Spain" class="faq-dot"> Curated venue recommendations based on your brief</div>
+              <div class="faq-bullet"><img src="/images/spanish-wedding-venues.svg" width="10" height="10" alt="Spanish Wedding Venues" class="faq-dot"> Assistance arranging and attending viewings</div>
+              <div class="faq-bullet"><img src="/images/wedding-venue-search-spain.svg" width="10" height="10" alt="Wedding Venue Search Spain" class="faq-dot"> Guidance on contracts, capacity and practical considerations</div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can wedding planners help source suppliers in Spain?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Yes. Established wedding planners work with trusted networks of experienced suppliers across Spain — from photographers and florists to caterers, stylists and entertainers. They connect you with professionals who match your aesthetic and expectations.</p>
+            <p>Rather than overwhelming you with endless options, they present carefully selected recommendations that suit your budget and style. They also assist with communication, proposals and overall coordination to ensure consistency throughout your wedding.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/wedding-suppliers-spain.svg" width="10" height="10" alt="Wedding Suppliers Spain" class="faq-dot"> Personalised supplier recommendations</div>
+              <div class="faq-bullet"><img src="/images/wedding-vendor-directory-spain.svg" width="10" height="10" alt="Wedding Vendor Directory Spain" class="faq-dot"> Support reviewing proposals and contracts</div>
+              <div class="faq-bullet"><img src="/images/wedding-planners.svg" width="10" height="10" alt="Wedding Planners" class="faq-dot"> Ongoing coordination to ensure seamless delivery</div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How much does a wedding planner cost in Spain?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>Wedding planner pricing in Spain is typically bespoke. Every wedding is different, and fees are based on the size, complexity and specific requirements of your event.</p>
+            <p>Following an initial consultation, most planners provide a tailored proposal outlining the scope of work and associated costs. This ensures fairness and transparency — a small intimate wedding requires a different level of planning compared to a large multi-day celebration. Prices generally range from around €800 for day-of coordination to €5,000 or more for full destination wedding planning.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/wedding-planning-cost.svg" width="10" height="10" alt="Wedding Planning Cost" class="faq-dot"> Pricing based on guest numbers and event scale</div>
+              <div class="faq-bullet"><img src="/images/cost-of-wedding-planning.svg" width="10" height="10" alt="Cost of Wedding Planning" class="faq-dot"> Clear, tailored proposals with no hidden costs</div>
+              <div class="faq-bullet"><img src="/images/wedding-planning.svg" width="10" height="10" alt="Wedding Planning" class="faq-dot"> Flexible levels of planning support available</div>
+            </div>
+          </div></div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Do I need a wedding planner for a destination wedding in Spain?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">
+            <p>This depends on your circumstances, available time and the complexity of your wedding. Many couples find that professional guidance significantly reduces stress and prevents costly mistakes — particularly when planning a destination wedding from abroad.</p>
+            <p>A wedding involves supplier contracts, timelines, logistics and contingency planning. Having an experienced planner ensures nothing is overlooked and that every element works together seamlessly. That said, some couples prefer a more hands-on approach, and many planners offer flexible levels of support to suit different needs.</p>
+            <div class="faq-bullets">
+              <div class="faq-bullet"><img src="/images/what-is-wedding-planning.svg" width="10" height="10" alt="What is Wedding Planning" class="faq-dot"> Expert guidance and structured planning</div>
+              <div class="faq-bullet"><img src="/images/destination-wedding-planner-spain.svg" width="10" height="10" alt="Destination Wedding Planner Spain" class="faq-dot"> Reduced stress and time-saving support</div>
+              <div class="faq-bullet"><img src="/images/hire-wedding-planner-spain.svg" width="10" height="10" alt="Hire Wedding Planner Spain" class="faq-dot"> Confidence that your day is professionally managed</div>
+            </div>
+          </div></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1230,7 +1593,7 @@ footer {
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 WeddingPlanning.es — All rights reserved</span>
+      <span>© 2025 WeddingPlanning.es — All rights reserved</span>
       <span>Made with ❤️ in Spain</span>
     </div>
   </div>
@@ -1444,6 +1807,16 @@ function showToast(message, isError = false) {
   toast.textContent = message;
   container.appendChild(toast);
   setTimeout(() => toast.remove(), 4200);
+}
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Toggle clicked
+  if (!wasOpen) item.classList.add('open');
 }
 
 // ===== HEADER SCROLL =====

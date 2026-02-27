@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/wedding-planners-madrid", "destination": "/wedding-planners-madrid.html" }
+  ]
+}
