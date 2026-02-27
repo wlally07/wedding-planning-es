@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>List Your Business — Wedding Planner Registration | WeddingPlanning.es</title>
+<meta name="description" content="Join Spain's growing wedding planning directory. Create your planner profile, showcase your services and connect with couples planning their dream wedding in Spain.">
+<link rel="canonical" href="https://www.weddingplanning.es/list-your-business">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --champagne: #E8D5B7; --champagne-light: #F5EDE0; --champagne-pale: #FBF7F1;
+  --rose: #C4918A; --rose-deep: #A66E68; --rose-light: #E8C5C0;
+  --sage: #9CAF88; --sage-deep: #7A9166;
+  --olive: #6B705C; --cream: #FEFCF8; --charcoal: #2D2926;
+  --warm-gray: #6E6862; --light-gray: #E8E4DF;
+  --gold: #C9A96E; --gold-light: #DFC99E; --white: #FFFFFF;
+  --shadow-sm: 0 1px 3px rgba(45,41,38,0.06); --shadow-md: 0 4px 16px rgba(45,41,38,0.08);
+  --shadow-lg: 0 8px 32px rgba(45,41,38,0.12);
+  --radius: 12px; --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lora', serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER */
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(254,252,248,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(232,213,183,0.4); }
+.nav-top { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1240px; margin: 0 auto; }
+.logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--charcoal); text-decoration: none; }
+.logo span { color: var(--rose); }
+.nav-actions a { font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 500; color: var(--warm-gray); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: var(--transition); }
+.nav-actions a:hover { color: var(--rose); }
+
+/* PAGE */
+.page-hero { padding: 140px 0 60px; text-align: center; }
+.section-label { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--rose); margin-bottom: 12px; }
+.page-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 500; margin-bottom: 16px; }
+.page-hero h1 em { font-style: italic; color: var(--rose-deep); }
+.page-hero p { font-size: 1.05rem; color: var(--warm-gray); max-width: 580px; margin: 0 auto; }
+
+/* FORM */
+.form-wrapper {
+  max-width: 720px; margin: 0 auto 80px; background: var(--white);
+  border-radius: var(--radius-lg); padding: 52px 48px;
+  box-shadow: var(--shadow-md); border: 1px solid rgba(232,213,183,0.3);
+}
+.form-grid { display: flex; flex-direction: column; gap: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.form-field label {
+  font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--charcoal);
+  display: block; margin-bottom: 8px;
+}
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%; padding: 14px 18px;
+  border: 1.5px solid var(--light-gray); border-radius: var(--radius);
+  font-family: 'Lora', serif; font-size: 0.95rem;
+  outline: none; transition: border 0.3s; background: var(--cream);
+  color: var(--charcoal);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  border-color: var(--rose);
+}
+.form-field select { cursor: pointer; }
+.form-field textarea { resize: vertical; line-height: 1.7; }
+.form-field .hint {
+  font-family: 'Montserrat', sans-serif; font-size: 0.7rem;
+  color: var(--warm-gray); margin-top: 6px;
+}
+
+/* UPLOAD */
+.upload-area {
+  border: 2px dashed var(--light-gray); border-radius: var(--radius);
+  padding: 40px 24px; text-align: center; cursor: pointer;
+  transition: var(--transition); background: var(--cream);
+}
+.upload-area:hover { border-color: var(--rose); background: var(--champagne-pale); }
+.upload-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.upload-text { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--charcoal); margin-bottom: 4px; }
+.upload-hint { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; color: var(--warm-gray); }
+.upload-preview { display: none; margin-bottom: 16px; }
+.upload-preview img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 4px solid var(--champagne); }
+
+/* STEPS */
+.steps-bar { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 48px; }
+.step-dot {
+  width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 700;
+  transition: var(--transition);
+}
+.step-dot.active { background: var(--rose); color: var(--white); }
+.step-dot.inactive { background: var(--light-gray); color: var(--warm-gray); }
+.step-dot.done { background: var(--sage); color: var(--white); }
+.step-line { width: 60px; height: 2px; background: var(--light-gray); }
+.step-line.done { background: var(--sage); }
+
+/* BUTTONS */
+.btn { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 14px 36px; border: none; border-radius: 50px; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+.btn-primary { background: var(--rose); color: var(--white); }
+.btn-primary:hover { background: var(--rose-deep); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: transparent; color: var(--warm-gray); border: 1.5px solid var(--light-gray); }
+.btn-secondary:hover { border-color: var(--rose); color: var(--rose); }
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--charcoal); }
+.form-actions { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
+
+/* SUCCESS */
+.success-state { display: none; text-align: center; padding: 60px 20px; }
+.success-icon { font-size: 4rem; margin-bottom: 20px; }
+.success-state h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; }
+.success-state p { font-size: 1rem; color: var(--warm-gray); max-width: 440px; margin: 0 auto 32px; }
+
+/* BENEFITS */
+.benefits-section { background: var(--champagne-pale); padding: 80px 0; }
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px; }
+.benefit-card { text-align: center; padding: 32px 24px; }
+.benefit-card .b-icon { font-size: 2rem; margin-bottom: 16px; }
+.benefit-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 8px; }
+.benefit-card p { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.6; }
+
+/* FOOTER */
+footer { background: var(--charcoal); color: rgba(255,255,255,0.6); padding: 40px 0; text-align: center; }
+footer p { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; }
+footer a { color: var(--gold-light); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-row { grid-template-columns: 1fr; }
+  .form-wrapper { padding: 36px 24px; }
+  .page-hero h1 { font-size: 2rem; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .form-actions { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-top">
+    <a class="logo" href="/">Wedding<span>Planning</span>.es</a>
+    <div class="nav-actions">
+      <a href="/">← Back to Directory</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="section-label">For Wedding Professionals</p>
+    <h1>List Your <em>Business</em></h1>
+    <p>Join Spain's growing wedding directory. Create your profile, showcase your work and connect with couples planning their dream wedding.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="b-icon">👰</div>
+        <h3>Reach More Couples</h3>
+        <p>Get discovered by couples actively searching for wedding planners across Spain and beyond.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">✓</div>
+        <h3>Verified Profile</h3>
+        <p>Stand out with a verified badge that builds trust and credibility with potential clients.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">📈</div>
+        <h3>Grow Your Business</h3>
+        <p>Receive direct enquiries from qualified leads looking for exactly the services you offer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section style="padding: 80px 0;">
+  <div class="container">
+    <div class="form-wrapper">
+
+      <!-- Steps -->
+      <div class="steps-bar">
+        <div class="step-dot active" id="step1dot">1</div>
+        <div class="step-line" id="step1line"></div>
+        <div class="step-dot inactive" id="step2dot">2</div>
+        <div class="step-line" id="step2line"></div>
+        <div class="step-dot inactive" id="step3dot">3</div>
+      </div>
+
+      <!-- STEP 1: Basic Details -->
+      <div id="formStep1">
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; text-align:center; margin-bottom:8px;">Your Details</h3>
+        <p style="font-size:0.9rem; color:var(--warm-gray); text-align:center; margin-bottom:36px;">Tell us about you and your business.</p>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Company Name *</label>
+              <input type="text" id="pf-company" placeholder="e.g. Madrid Luxe Weddings">
+            </div>
+            <div class="form-field">
+              <label>Contact Name *</label>
+              <input type="text" id="pf-contact" placeholder="e.g. Carmen López">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Email Address *</label>
+              <input type="email" id="pf-email" placeholder="e.g. hello@yourbusiness.com">
+            </div>
+            <div class="form-field">
+              <label>Phone Number</label>
+              <input type="tel" id="pf-phone" placeholder="e.g. +34 612 345 678">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Location *</label>
+              <select id="pf-location">
+                <option value="">Select your location</option>
+                <optgroup label="Madrid">
+                  <option>Central Madrid</option>
+                  <option>Chamartín, Madrid</option>
+                  <option>Salamanca, Madrid</option>
+                  <option>Chamberí, Madrid</option>
+                  <option>Retiro, Madrid</option>
+                  <option>La Latina, Madrid</option>
+                  <option>Aravaca, Madrid</option>
+                </optgroup>
+                <optgroup label="Greater Madrid">
+                  <option>Sierra de Guadarrama</option>
+                  <option>Torrelodones, Madrid</option>
+                  <option>Boadilla del Monte, Madrid</option>
+                  <option>Las Rozas, Madrid</option>
+                  <option>Aranjuez, Madrid</option>
+                  <option>Rivas-Vaciamadrid</option>
+                  <option>Tres Cantos, Madrid</option>
+                </optgroup>
+                <optgroup label="Nearby Regions">
+                  <option>Toledo</option>
+                  <option>Segovia</option>
+                  <option>Guadalajara</option>
+                </optgroup>
+                <optgroup label="Costa del Sol">
+                  <option>Marbella</option>
+                  <option>Málaga</option>
+                  <option>Estepona</option>
+                  <option>Fuengirola</option>
+                </optgroup>
+                <optgroup label="Cataluña">
+                  <option>Barcelona</option>
+                  <option>Sitges</option>
+                  <option>Girona</option>
+                </optgroup>
+                <optgroup label="Balearic Islands">
+                  <option>Ibiza</option>
+                  <option>Mallorca</option>
+                  <option>Menorca</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option>Valencia</option>
+                  <option>Seville</option>
+                  <option>San Sebastián</option>
+                  <option>Canary Islands</option>
+                  <option>Other Location</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Website</label>
+              <input type="url" id="pf-website" placeholder="e.g. https://yourbusiness.com">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <div></div>
+            <button class="btn btn-primary" onclick="goToStep(2)">Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Profile -->
+      <div id="formStep2" style="display:none;">
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; text-align:center; margin-bottom:8px;">Your Profile</h3>
+        <p style="font-size:0.9rem; color:var(--warm-gray); text-align:center; margin-bottom:36px;">Add a photo and tell couples what makes your business special.</p>
+
+        <div class="form-grid">
+          <!-- Profile Image -->
+          <div class="form-field">
+            <label>Profile Image</label>
+            <div class="upload-area" onclick="document.getElementById('pf-image').click()">
+              <div class="upload-preview" id="pf-upload-preview"></div>
+              <div id="pf-upload-prompt">
+                <div class="upload-icon">📷</div>
+                <p class="upload-text">Click to upload your profile image</p>
+                <p class="upload-hint">JPG, PNG or WebP. Recommended 500x500px. Max 5MB.</p>
+              </div>
+              <input type="file" id="pf-image" accept="image/*" style="display:none;" onchange="previewImage(this)">
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="form-field">
+            <label>About Your Business *</label>
+            <textarea id="pf-bio" rows="8" placeholder="Tell couples about your experience, services offered, your style and approach, the areas you cover and what makes your business unique. This is your chance to make a great first impression."></textarea>
+            <p class="hint" style="text-align:right;"><span id="pf-bio-count">0</span> / 500 characters</p>
+          </div>
+
+          <!-- Services -->
+          <div class="form-field">
+            <label>Services Offered</label>
+            <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;">
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-full" style="accent-color:var(--rose);"> Full Planning
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-partial" style="accent-color:var(--rose);"> Partial Planning
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-dayof" style="accent-color:var(--rose);"> Day-of Coordination
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-destination" style="accent-color:var(--rose);"> Destination Weddings
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-venue" style="accent-color:var(--rose);"> Venue Sourcing
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-elopement" style="accent-color:var(--rose);"> Elopements
+              </label>
+              <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px; transition:all 0.2s;">
+                <input type="checkbox" id="svc-eco" style="accent-color:var(--rose);"> Eco-Friendly
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="goToStep(1)">← Back</button>
+            <button class="btn btn-primary" onclick="goToStep(3)">Continue →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Pricing & Submit -->
+      <div id="formStep3" style="display:none;">
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; text-align:center; margin-bottom:8px;">Final Details</h3>
+        <p style="font-size:0.9rem; color:var(--warm-gray); text-align:center; margin-bottom:36px;">Help couples understand your pricing and availability.</p>
+
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Starting Price (€)</label>
+              <input type="text" id="pf-price" placeholder="e.g. 2,000">
+              <p class="hint">Your starting price for the most basic package.</p>
+            </div>
+            <div class="form-field">
+              <label>Years of Experience</label>
+              <select id="pf-experience">
+                <option value="">Select</option>
+                <option>1-2 years</option>
+                <option>3-5 years</option>
+                <option>6-10 years</option>
+                <option>10+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label>Languages Spoken</label>
+              <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;">
+                <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px;">
+                  <input type="checkbox" checked style="accent-color:var(--rose);"> English
+                </label>
+                <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px;">
+                  <input type="checkbox" checked style="accent-color:var(--rose);"> Spanish
+                </label>
+                <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px;">
+                  <input type="checkbox" style="accent-color:var(--rose);"> French
+                </label>
+                <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px;">
+                  <input type="checkbox" style="accent-color:var(--rose);"> German
+                </label>
+                <label style="font-size:0.85rem; font-weight:400; text-transform:none; letter-spacing:0; display:flex; align-items:center; gap:8px; cursor:pointer; padding:8px 16px; border:1.5px solid var(--light-gray); border-radius:50px;">
+                  <input type="checkbox" style="accent-color:var(--rose);"> Other
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-weight:400; text-transform:none; letter-spacing:0;">
+              <input type="checkbox" id="pf-terms" style="accent-color:var(--rose); width:18px; height:18px;">
+              I agree to the WeddingPlanning.es terms of service and confirm all information provided is accurate. *
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" onclick="goToStep(2)">← Back</button>
+            <button class="btn btn-gold" onclick="submitForm()" style="padding:16px 48px; font-size:0.85rem;">Submit Your Listing ✨</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="formSuccess">
+        <div class="success-icon">✨</div>
+        <h2>Welcome to WeddingPlanning.es!</h2>
+        <p>Your listing has been submitted for review. Our team will verify your profile and be in touch within 48 hours.</p>
+        <a href="/" class="btn btn-primary">Back to Directory</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2025 <a href="/">WeddingPlanning.es</a> — All rights reserved. Made with ❤️ in Spain</p>
+  </div>
+</footer>
+
+<script>
+function goToStep(step) {
+  // Validate current step before advancing
+  if (step === 2) {
+    const company = document.getElementById('pf-company').value.trim();
+    const contact = document.getElementById('pf-contact').value.trim();
+    const email = document.getElementById('pf-email').value.trim();
+    const location = document.getElementById('pf-location').value;
+    if (!company || !contact || !email || !location) {
+      alert('Please complete all required fields before continuing.');
+      return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+  }
+  if (step === 3) {
+    const bio = document.getElementById('pf-bio').value.trim();
+    if (!bio) {
+      alert('Please write a short bio about your business.');
+      return;
+    }
+  }
+
+  // Hide all steps
+  document.getElementById('formStep1').style.display = 'none';
+  document.getElementById('formStep2').style.display = 'none';
+  document.getElementById('formStep3').style.display = 'none';
+
+  // Show target step
+  document.getElementById('formStep' + step).style.display = 'block';
+
+  // Update step dots
+  for (let i = 1; i <= 3; i++) {
+    const dot = document.getElementById('step' + i + 'dot');
+    if (i < step) { dot.className = 'step-dot done'; dot.textContent = '✓'; }
+    else if (i === step) { dot.className = 'step-dot active'; dot.textContent = i; }
+    else { dot.className = 'step-dot inactive'; dot.textContent = i; }
+  }
+  for (let i = 1; i <= 2; i++) {
+    const line = document.getElementById('step' + i + 'line');
+    line.className = i < step ? 'step-line done' : 'step-line';
+  }
+
+  window.scrollTo({ top: 400, behavior: 'smooth' });
+}
+
+function previewImage(input) {
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    if (file.size > 5 * 1024 * 1024) {
+      alert('Image must be under 5MB.');
+      input.value = '';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const preview = document.getElementById('pf-upload-preview');
+      preview.innerHTML = '<img src="' + e.target.result + '">';
+      preview.style.display = 'block';
+      document.getElementById('pf-upload-prompt').innerHTML = '<p class="upload-text" style="color:var(--sage-deep);">Image selected. Click to change.</p>';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+document.getElementById('pf-bio').addEventListener('input', function() {
+  const count = this.value.length;
+  document.getElementById('pf-bio-count').textContent = count;
+  document.getElementById('pf-bio-count').style.color = count > 500 ? 'var(--rose-deep)' : 'var(--warm-gray)';
+});
+
+const SUPABASE_URL = 'https://timntczlwpcoohbvdqss.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRpbW50Y3psd3Bjb29oYnZkcXNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxMjUwODksImV4cCI6MjA4NzcwMTA4OX0.ukv65Or6XcjID3L0HgilTm7GUsg5Na3gRaGOgT2oQbw';
+
+// City name to ID mapping
+const CITY_MAP = {
+  'Central Madrid': 1, 'Chamartín, Madrid': 1, 'Salamanca, Madrid': 1, 'Chamberí, Madrid': 1,
+  'Retiro, Madrid': 1, 'La Latina, Madrid': 1, 'Aravaca, Madrid': 1, 'Sierra de Guadarrama': 1,
+  'Torrelodones, Madrid': 1, 'Boadilla del Monte, Madrid': 1, 'Las Rozas, Madrid': 1,
+  'Aranjuez, Madrid': 1, 'Rivas-Vaciamadrid': 1, 'Tres Cantos, Madrid': 1,
+  'Toledo': 13, 'Segovia': 1, 'Guadalajara': 1,
+  'Marbella': 8, 'Málaga': 5, 'Estepona': 8, 'Fuengirola': 5,
+  'Barcelona': 2, 'Sitges': 15, 'Girona': 2,
+  'Ibiza': 9, 'Mallorca': 10, 'Menorca': 10,
+  'Valencia': 4, 'Seville': 3, 'San Sebastián': 11, 'Canary Islands': 1
+};
+
+function slugify(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+async function submitForm() {
+  if (!document.getElementById('pf-terms').checked) {
+    alert('Please agree to the terms of service.');
+    return;
+  }
+
+  const submitBtn = document.querySelector('#formStep3 .btn-gold');
+  submitBtn.textContent = 'Submitting...';
+  submitBtn.disabled = true;
+
+  // Gather all form data
+  const company = document.getElementById('pf-company').value.trim();
+  const contact = document.getElementById('pf-contact').value.trim();
+  const email = document.getElementById('pf-email').value.trim();
+  const phone = document.getElementById('pf-phone').value.trim();
+  const locationVal = document.getElementById('pf-location').value;
+  const website = document.getElementById('pf-website').value.trim();
+  const bio = document.getElementById('pf-bio').value.trim();
+  const price = document.getElementById('pf-price').value.trim();
+  const experience = document.getElementById('pf-experience').value;
+
+  // Gather services checkboxes
+  const services = [];
+  if (document.getElementById('svc-full').checked) services.push('Full Planning');
+  if (document.getElementById('svc-partial').checked) services.push('Partial Planning');
+  if (document.getElementById('svc-dayof').checked) services.push('Day-of Coordination');
+  if (document.getElementById('svc-destination').checked) services.push('Destination Weddings');
+  if (document.getElementById('svc-venue').checked) services.push('Venue Sourcing');
+  if (document.getElementById('svc-elopement').checked) services.push('Elopements');
+  if (document.getElementById('svc-eco').checked) services.push('Eco-Friendly');
+
+  // Gather languages
+  const langBoxes = document.querySelectorAll('#formStep3 input[type="checkbox"]');
+  const languages = [];
+  langBoxes.forEach(cb => {
+    if (cb.checked && cb.id !== 'pf-terms') {
+      const label = cb.parentElement.textContent.trim();
+      if (label && label !== '') languages.push(label);
+    }
+  });
+
+  // Map location to city_id
+  const cityId = CITY_MAP[locationVal] || null;
+
+  const vendorData = {
+    business_name: company,
+    slug: slugify(company),
+    contact_name: contact,
+    email: email,
+    phone: phone || null,
+    category_id: 'wedding-planners',
+    city_id: cityId,
+    address: locationVal,
+    website: website || null,
+    description: bio,
+    starting_price: price || null,
+    years_experience: experience || null,
+    services_offered: services.length > 0 ? services : null,
+    languages: languages.length > 0 ? languages : null,
+    status: 'pending'
+  };
+
+  try {
+    const response = await fetch(SUPABASE_URL + '/rest/v1/vendors', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'Prefer': 'return=representation'
+      },
+      body: JSON.stringify(vendorData)
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.message || 'Submission failed');
+    }
+
+    // Success - hide form, show confirmation
+    document.getElementById('formStep3').style.display = 'none';
+    document.querySelector('.steps-bar').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    window.scrollTo({ top: 400, behavior: 'smooth' });
+
+  } catch (error) {
+    console.error('Submission error:', error);
+    alert('There was an error submitting your listing. Please try again or contact us directly.');
+    submitBtn.textContent = 'Submit Your Listing ✨';
+    submitBtn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
